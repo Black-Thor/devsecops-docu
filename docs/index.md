@@ -20,3 +20,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 Pour lancer mkdocs localement depuis powershell : 
 python -m mkdocs serve 
+
+
+Please see the [project license](about.md) for further details.
+
+Please see the [project license](Conteneurisation/information.md) for further details.
