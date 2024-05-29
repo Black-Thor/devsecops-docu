@@ -1,14 +1,14 @@
 site_name: Ma documentation DevSecOps
 theme:
   name: material
-  logo: assets/logo.png
 nav:
   - Acceuil : index.md
   - Culture DevOps: 
-    - 'Devops/culture.md'
-  - Conteneurisation: 
-    - 'Conteneurisation/information.md'
-    - Docker: 
-      - 'Conteneurisation/Docker/docker.md'
-      
-  - Information: about.md
+    - 'Devops/Culture/introduction.md'
+  # - Conteneurisation: 
+  #   - 'Conteneurisation/information.md'
+  #   - Docker: 
+  #     - 'Conteneurisation/Docker/docker.md'
+  #   - Kubernetes:
+  #     - 'Conteneurisation/Kubernetes/kubernetes.md'
+  # - Information: about.md
