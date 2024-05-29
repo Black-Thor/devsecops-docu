@@ -1,0 +1,546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Introduction - Ma documentation DevSecOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Ma documentation DevSecOps" class="md-header__button md-logo" aria-label="Ma documentation DevSecOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ma documentation DevSecOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Ma documentation DevSecOps" class="md-nav__button md-logo" aria-label="Ma documentation DevSecOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Ma documentation DevSecOps
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceuil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Culture DevOps
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Culture DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etre-agile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Être agile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-to-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time To value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-mur-de-la-confusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le Mur de la Confusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatiser-lensemble-du-cycle-de-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatiser l'ensemble du cycle de production
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ressources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etre-agile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Être agile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-to-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time To value
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-mur-de-la-confusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le Mur de la Confusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatiser-lensemble-du-cycle-de-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatiser l'ensemble du cycle de production
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ressources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h2 id="introduction">Introduction</h2>
+<p>Le DevOps est une approche qui concilie le développement et les opérations. Initialement utilisée dans le domaine du développement logiciel, elle s’est également répandue dans la Data Science et le Machine Learning. </p>
+<p>Le terme DevOps est la contraction des mots “développement” et “opérations”. 
+Il s’agit d’une pratique visant à répondre aux  besoins des développeur de livrer rapidement en production et des opérationnelle d'assurer l’assurance qualité. </p>
+<p>Le DevOps n'est ni un métier ni un framework. C'est une démarche qui est devenue une philosophie qui vise à briser le silo entre les équipes en charge du développement des applications, les Dev et celles en charge des infrastructures, les Ops. </p>
+<p>Le DevOps est une extension naturelle des méthodes agiles (SCRUM, KABAN)</p>
+<p><img alt="Cat Ops Problem " src="../../../assets/meme/ops_probleme.jpg" /></p>
+<h2 id="etre-agile">Être agile</h2>
+<p>La fourniture rapide, fiable et pertinente de services IT est devenue, quel que soit le secteur d’activité, une composante essentielle de la compétitivité des entreprises. Pour gagner en réactivité, sans pour autant perdre en fiabilité et qualité, les grandes structures doivent transformer en profondeur leurs pratiques sur tout le cycle de production IT, de la conception au déploiement. </p>
+<p>Cette transformation est déjà bien entamée à travers la démocratisation des 
+méthodologies agiles, comme Scrum, qui a permis d’accélérer et d’augmenter le 
+nombre de livraisons applicatives. </p>
+<p>Pour autant, freiné par des temps de livraison en production trop longs, ces méthodes ne tiennent pas encore toutes leurs promesses. Pour vraiment améliorer le time-to-value, c’est-à-dire le temps entre l’expression du besoin du métier et l’ouverture du service idoine, c’est l’intégralité de la chaîne de valeur IT, du métier aux opérations, qui doit être transformée. </p>
+<p>La démarche DevOps étend les pratiques agiles venues du développement au passage 
+en production pour bénéficier pleinement de l’accélération des livraisons applicatives.</p>
+<h2 id="time-to-value">Time To value</h2>
+<p>Le DevOps est une démarche d‘alignement des parties prenantes de la chaîne 
+de valeur IT (business, développement, opérations mais aussi sécurité, 
+architecture, compliance et autres fonctions transverses) sur un objectif métier 
+commun, dans le but d’accroître la réactivité de l’entreprise sur son marché.</p>
+<p>Cette démarche se matérialise par un ensemble de bonnes pratiques, méthodologies et outils qui servent deux objectifs :
+- Aligner les objectifs entre Dev et Ops
+- Automatiser l’ensemble du cycle de production</p>
+<h2 id="le-mur-de-la-confusion">Le Mur de la Confusion</h2>
+<p>Dans les entreprises traditionnelles, on trouve généralement deux équipes principales au sein du département IT: l'équipe de développement (Dev Team) et l'équipe des opérations (Ops Team).</p>
+<p>La Dev Team a pour mission de développer le produit souhaité par le client. Soucieux de la performance et de la qualité du produit, ainsi que des spécifications du client, et souvent désireux d'essayer les dernières technologies du marché, les développeurs proposent fréquemment des solutions nécessitant l'installation de nouveaux logiciels (bases de données, systèmes de messagerie, conteneurs, etc.), de nouveaux serveurs, ou de nouveaux systèmes d'exploitation.</p>
+<p>En revanche, la mission de l'Ops Team est de garantir un certain niveau de performance, de stabilité et de fiabilité de la solution fournie au client. Par conséquent, l'Ops Team est souvent très réticente aux changements. Elle peut même s'opposer à toute modification d'infrastructure, à l'installation de nouveaux produits ou à l'utilisation de nouveaux systèmes pour éviter tout risque d'instabilité ou de régression des performances.</p>
+<p>Ces deux philosophies entrent souvent en conflit, créant une atmosphère de travail tendue au sein de l'entreprise. Ce conflit est communément appelé le "Mur de la Confusion".</p>
+<p><img alt="Mur de la confusion " src="../../../assets/Images/Culture/mur-de-la-confusion-2.png" /></p>
+<p>D'un côté, les développeurs poussent pour faire évoluer la technologie utilisée et adopter de nouvelles procédures. De l'autre, les équipes d'opérations insistent pour maintenir la stabilité des systèmes et garantir un certain niveau de performance.</p>
+<p>Dans les deux cas, l'objectif reste la satisfaction du client. Sans l'approbation du client, un projet peut rapidement devenir non rentable. La situation financière de l'entreprise peut alors se détériorer, créant une ambiance de travail insupportable. Les commerciaux veulent répondre aux demandes des clients, les développeurs cherchent à implémenter les meilleures solutions, et les opérations se concentrent sur la stabilité et la fiabilité, parfois au détriment de la rapidité ou de la simplicité.</p>
+<p><img alt="Mur de la confusion " src="../../../assets/Images/Culture/mur-de-la-confusion.png" /></p>
+<p>Ce conflit peut entraîner des retards de livraison importants, voire des pénalités, entraînant des pertes financières conséquentes pour l'entreprise.</p>
+<p>Aujourd'hui, la collaboration entre les équipes de développement et d'opérations reste souvent difficile. Leurs missions respectives – innovation, évolution et réactivité pour les Devs, stabilité et fiabilité pour les Ops – semblent a priori peu compatibles. Cette interdépendance complexe peut nuire à la performance et générer une frustration mutuelle. Les méthodologies agiles, bien qu'efficaces dans de nombreux contextes, n'ont pas toujours résolu ce problème, souvent en raison d'une implication insuffisante des équipes d'exploitation. L'accélération du rythme de livraison applicative et la philosophie "test &amp; learn" peuvent même accentuer le fossé. Les équipes d'exploitation doivent déployer en production un nombre croissant d'évolutions, souvent avec une augmentation des taux d'erreurs, alors que l'exigence de fiabilité reste constante. Cela crée non seulement un goulot d'étranglement au niveau de la production, mais aussi des frictions accrues entre les équipes de développement et d'exploitation.</p>
+<p>Les pratiques et outils DevOps offrent une solution en intégrant l'ensemble des acteurs de la chaîne de valeur IT au sein d'un processus unique, intégré et continu, reposant sur des principes agiles (itérations, forte collaboration business, test &amp; learn) et une véritable culture de la collaboration entre les Devs et les Ops.</p>
+<h2 id="automatiser-lensemble-du-cycle-de-production">Automatiser l'ensemble du cycle de production</h2>
+<p>Le DevOps repose également sur la mise en place d'outils d'automatisation couvrant tout le cycle de production IT : automatisation de la fourniture d'infrastructure, de la construction applicative, des tests et du déploiement applicatif. Cette automatisation permet d'absorber l'augmentation du volume et du rythme des tests itératifs, garantissant ainsi la qualité du code applicatif à chaque itération sans créer de goulot d'étranglement en aval.</p>
+<p>En adoptant les pratiques DevOps, les entreprises peuvent surmonter le Mur de la Confusion et améliorer la collaboration entre les équipes de développement et d'opérations, tout en assurant la satisfaction du client.</p>
+<h1 id="ressources">Ressources</h1>
+<p>https://devopscube.com/become-devops-engineer/</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
