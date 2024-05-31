@@ -5,10 +5,16 @@ nav:
   - Acceuil : index.md
   - Culture DevOps: 
     - 'Devops/Culture/introduction.md'
-  # - Conteneurisation: 
-  #   - 'Conteneurisation/information.md'
-  #   - Docker: 
+  - Conteneurisation: 
+    - Docker: 
+      - 'Conteneurisation/Docker/index.md'
+      - 'Conteneurisation/Docker/images.md'
   #     - 'Conteneurisation/Docker/docker.md'
   #   - Kubernetes:
   #     - 'Conteneurisation/Kubernetes/kubernetes.md'
   # - Information: about.md
+  - Blog:
+    - blog/index.md
+plugins:
+  - search
+  - blog
