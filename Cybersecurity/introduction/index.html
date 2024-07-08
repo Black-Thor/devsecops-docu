@@ -1,0 +1,1766 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../DevSecOps/Culture/pratique/">
+      
+      
+        <link rel="next" href="../../Conteneurisation/Docker/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Introduction - Ma documentation DevSecOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-a-la-cybersecurite" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Ma documentation DevSecOps" class="md-header__button md-logo" aria-label="Ma documentation DevSecOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ma documentation DevSecOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Ma documentation DevSecOps" class="md-nav__button md-logo" aria-label="Ma documentation DevSecOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Ma documentation DevSecOps
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceuil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Culture DevOps
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Culture DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devops/Culture/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Déploiement
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Déploiement
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Devops/Deploiement/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déploiement sans interruption
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DevSecOps
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            DevSecOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevSecOps/Culture/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dans la pratique
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Dans la pratique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DevSecOps/Culture/pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cybersécurité
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cybersécurité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-a-la-cybersecurite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction à la Cybersécurité
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction à la Cybersécurité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-triade-dic-tn" class="md-nav__link">
+    <span class="md-ellipsis">
+      La triade DIC (+TN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tn" class="md-nav__link">
+    <span class="md-ellipsis">
+      TN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lauthentification-forte" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'authentification forte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autorisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracabilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traçabilité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerabilite-menace-et-risque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnérabilité, menace et risque
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vulnérabilité, menace et risque">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vulnerabilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnérabilité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-concept-zero-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le concept "zero trust"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kill-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kill Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kill Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyber-kill-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cyber Kill Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cyber Kill Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reconnaissance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weaponization-armement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weaponization (Armement)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-livraison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delivery (Livraison)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploitation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-control-controle-a-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command &amp; Control (Contrôle à distance)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions-on-objectives-but-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actions on Objectives (But final)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-kill-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unified Kill Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unified Kill Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape "In"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-through" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape "Through"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape "Out"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Conteneurisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Conteneurisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conteneurisation/Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Conteneurisation/Docker/images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aide mémoire API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    TP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            TP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/TP/exercice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices passage de paramètres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-a-la-cybersecurite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction à la Cybersécurité
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction à la Cybersécurité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-triade-dic-tn" class="md-nav__link">
+    <span class="md-ellipsis">
+      La triade DIC (+TN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tn" class="md-nav__link">
+    <span class="md-ellipsis">
+      TN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lauthentification-forte" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'authentification forte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autorisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracabilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traçabilité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerabilite-menace-et-risque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnérabilité, menace et risque
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vulnérabilité, menace et risque">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vulnerabilite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vulnérabilité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-concept-zero-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le concept "zero trust"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kill-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kill Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Kill Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cyber-kill-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cyber Kill Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cyber Kill Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reconnaissance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weaponization-armement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weaponization (Armement)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-livraison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delivery (Livraison)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploitation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-control-controle-a-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command &amp; Control (Contrôle à distance)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actions-on-objectives-but-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actions on Objectives (But final)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unified-kill-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unified Kill Chain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unified Kill Chain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etape-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape "In"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-through" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape "Through"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape "Out"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Introduction</h1>
+
+<h2 id="introduction-a-la-cybersecurite">Introduction à la Cybersécurité</h2>
+<p>Une donnée, dans le monde informatique, est une information qui peut être stockée ou traitée numériquement.</p>
+<p>Un des principaux objectifs de la cyber sécurité est avant tout de protéger les données de l'entreprise ou d'un individu.</p>
+<p>Nous allons étudier dans cette leçon les critères permettant de classifier ces données afin de mettre en place des solutions de protection adéquates.</p>
+<h3 id="la-triade-dic-tn">La triade DIC (+TN)</h3>
+<p>DIC
+La triade "DIC", ou "CIA" en anglais, est constituée des trois principaux critères nécessaires à l'évaluation de la sensibilité des données.</p>
+<p><img alt="La triade DIC" src="../../assets/Images/Cybersecurity/DIC.png" /></p>
+<p>Disponibilité (Availability)</p>
+<p>Le critère de disponibilité évalue la garantie d'avoir accès à la donnée lorsqu'on en a besoin.</p>
+<p>💡 Exemple : Lorsqu'un traitement automatisé va récupérer les données d'absence d'un salarié afin de calculer son salaire du mois, les données doivent être disponibles à chaque lancement du traitement, sinon il échoue.</p>
+<p>Intégrité (Integrity)</p>
+<p>Le critère d'intégrité évalue la garantie que l'état de la donnée n'a pas été modifié par rapport à son état original.</p>
+<p>💡 Exemple : Dans une boutique en ligne, on ne doit pas pouvoir modifier les prix des produits disponibles si l'on est un client.</p>
+<p>Confidentialité (Confidentiality)</p>
+<p>Le critère de confidentialité évalue la garantie que l'accès à la donnée est réalisé uniquement par quelqu'un ou quelque chose qui a le droit d'y accéder (besoin d'en connaître).</p>
+<p>💡 Exemple : Les motifs d'arrêt maladie doivent être consultables par le personnel habilité de l'assurance maladie, mais pas par l'employeur.</p>
+<h3 id="tn">TN</h3>
+<p>Bien que la triade DIC nous permette d'évaluer la sensibilité de la donnée afin d'y appliquer les justes mécanismes de protection, cette triade peut être étendue grâce à deux nouveaux critères.</p>
+<p>Ces critères vont nous permettre en plus de la protection de la donnée, de nous faciliter le travail en cas d'incident impliquant ces données.</p>
+<p><img alt="La triade TN" src="../../assets/Images/Cybersecurity/TN.png" /></p>
+<p>Traçabilité (Accounting)</p>
+<p>Le critère de traçabilité évalue la garantie de connaître de manière datée tout ce qui a pu se produire, qu'il s'agisse de l'accès à la donnée ou de sa modification.</p>
+<p>💡 Exemple : Lorsqu'un programme va consulter une donnée stockée dans une base de données, un journal de toutes les consultations, contenant l'heure et la donnée accédée, est conservé sur le serveur de base de données.</p>
+<p>Non répudiation (Non-repudiation)</p>
+<p>Le critère de non répudiation évalue la garantie de savoir qui a effectué une action sur une donnée, sans que celui-ci puisse remettre en question cette affirmation. C'est une extension de la traçabilité, ajoutant une notion d'identification.</p>
+<p>💡 Exemple : Si j'utilise la signature numérique dans un document et que je tra</p>
+<h2 id="authentification">Authentification</h2>
+<p><img alt="IAM " src="../../assets/Images/Cybersecurity/IAM.png" />
+L'authentification (authentication en Anglais, souvent abrégé "AuthN"), est le processus de vérifier qu'une identité est bien celle qu'elle prétend être.</p>
+<p>💡 Prenons l'exemple d'un site web avec un formulaire ayant deux champs, "adresse e-mail" et "mot de passe". Lorsque l'utilisateur saisit son adresse e-mail, il s'identifie. Lorsque l'utilisateur saisit son mot de passe et que le site web vérifie que le mot de passe saisi correspond à l'adresse e-mail saisie, l'utilisateur est authentifié.</p>
+<p>Les différents facteurs d'authentification
+Différents facteurs d'authentification (authentification factors) existent pour prouver une identité :</p>
+<ul>
+<li>Le facteur de connaissance (mot de passe, phrase de passe, code pin)</li>
+<li>Le facteur de possession (appareil avec application dédiée, token physique)</li>
+<li>Le facteur biométrique (empreinte digitale, empreinte de rétine, reconnaissance du visage)</li>
+</ul>
+<p>À ces principaux facteurs, on pourrait aujourd'hui ajouter un quatrième facteur :</p>
+<p>Le facteur géographique (localisation GPS, localisation de l'adresse IP)</p>
+<h3 id="lauthentification-forte">L'authentification forte</h3>
+<p>L'authentification forte, également appelée authentification à facteurs multiples (multi-factor authentication, MFA), est une bonne pratique de sécurité pour augmenter la résistance de l'authentification aux attaques courantes (leaked credentials, password-spraying, brute-force, etc.).</p>
+<p>Pour qu'une authentification soit considérée comme forte, elle doit reposer sur au moins deux facteurs différents.</p>
+<p>Plus le nombre de facteurs différents est élevé, plus l'authentification est forte.</p>
+<p>💡 Par exemple, si je saisis un mot de passe et un code pin, l'authentification ne sera pas considérée forte malgré le fait d'avoir fourni deux facteurs. En revanche si je saisis un mot de passe et que je valide la demande sur l'application Authenticator de mon téléphone, j'ai bien réalisé une authentification forte.</p>
+<h3 id="autorisation">Autorisation</h3>
+<p>L'autorisation (authorization en Anglais, souvent abrégé "AuthZ"), est le processus de vérifier tout ce qu'une identité peut effectuer.</p>
+<p>💡 Par exemple, lorsqu'un étudiant se connecte au site web de son école, il peut consulter ses relevés de notes, mais il n'est pas autorisé à modifier les notes.</p>
+<p>Les différents types d'autorisation
+Plusieurs modèles d'autorisation existent et peuvent cohabiter ou se superposer au sein d'un même périmètre :</p>
+<ul>
+<li>
+<p>Role-based Access Control (RBAC) : les autorisations sont basées sur un rôle fonctionnel de l'identité.</p>
+<blockquote>
+<p>Exemple : Rôle d'administrateur de la base de données.</p>
+</blockquote>
+</li>
+<li>
+<p>Rule-based Access Control (RuBAC) : les autorisations sont basées sur des règles prédéfinies.</p>
+<blockquote>
+<p>Exemple : L'utilisateur Matthieu a accès au serveur entre 8 heures et 20 heures.</p>
+</blockquote>
+</li>
+<li>
+<p>Discretionary Access Control (DAC) : les autorisations sont basées sur des droits définis par le propriétaire de l'objet.</p>
+<blockquote>
+<p>Exemple : Matthieu est propriétaire du fichier "liste_primes.pdf" et donne l'accès en lecture à Thomas et en écriture à Max.</p>
+</blockquote>
+</li>
+<li>
+<p>Mandatory Access Control (MAC) : les autorisations sont basées sur des règles définies par l'administrateur, par défaut on rejette toutes les demandes d'autorisation.</p>
+<blockquote>
+<p>Exemple : L'équipe RH doit être la seule habilitée à visualiser les montants des salaires de tous les employés. L'administrateur a explicitement donné un droit nominatif à chaque membre de l'équipe RH.</p>
+</blockquote>
+</li>
+<li>
+<p>Attribute-based Access Control (ABAC) : les autorisations sont basées sur plusieurs attributs de l'identité.</p>
+<blockquote>
+<p>Exemple : L'accès sur l'intranet à la page du site de Tours est uniquement possible aux utilisateurs ayant comme localisation "Tours" dans l'annuaire de l'entreprise.</p>
+</blockquote>
+</li>
+</ul>
+<p>Au quotidien, chacun de ces modèles d'autorisation ont leurs avantages et leurs inconvénients. C'est pourquoi il convient de choisir avec précaution quel modèle utiliser et combiner différents modèles.</p>
+<p><img alt="ABAC" src="../../assets/Images/Cybersecurity/ABAC.png" /></p>
+<p>💡 Par exemple sur un partage de fichier, l'accès peut être globalement donné à tous les salariés de l'entreprise. En revanche le dossier "RH" est accessible à tous les utilisateurs ayant le rôle "Responsable RH" (RBAC). Le sous-dossier "Paris" est accessible uniquement aux personnes ayant le rôle "Responsable RH" et l'attribut "Localisation = Paris" (ABAC). Enfin, dans ce sous dossier, un document "bonus.pdf" est consultable uniquement par David et Marc (MAC).</p>
+<p>Principe du moindre privilège
+Le "besoin d'en connaître" est une expression qui vient à l'origine du monde militaire et des renseignements. Cela signifie la nécessité absolue pour une personne d'avoir accès à une information donnée.</p>
+<p>Le "principe du moindre privilège" est une bonne pratique essentielle en cyber sécurité. Elle consiste à accorder à chaque utilisateur uniquement les droits d'accès minimum nécessaires à la réalisation de son travail.</p>
+<p>Ces deux notions se retrouvent donc pleinement intégrées dans la gestion des autorisations. Qu'il s'agisse de l'accès à la donnée, ou bien de l'accès à des droits ou des privilèges, nous devons toujours nous assurer que ceux-ci sont uniquement ceux nécessaires et suffisants pour accomplir la tâche.</p>
+<h3 id="tracabilite">Traçabilité</h3>
+<p>Le sujet de la traçabilité a déjà été évoqué dans la leçon sur la triade DIC et T (Disponibilité, Intégrité, Confidentialité et Traçabilité).</p>
+<p>Les bonnes pratiques concernant la journalisation des évènements sont principalement les suivantes :</p>
+<p>l'horodatage des évènements doit s'effectuer de manière précise et fiable.
+le contenu du journal doit être qualitatif (simple, compréhensible mais sans omettre d'information).
+le système de gestion des évènements doit être robuste, suffisamment dimensionné et sauvegardé selon les objectifs de rétention.
+Pour aller plus loin sur le sujet, vous pouvez consulter le guide référence de l'ANSSI, Recommandations de sécurité pour l'architecture d'un système de journalisation.</p>
+<h2 id="vulnerabilite-menace-et-risque">Vulnérabilité, menace et risque</h2>
+<p>Ces notions sont des bases essentielles pour mettre en oeuvre des processus de gestion des vulnérabilités et de gestion des risques.</p>
+<h3 id="vulnerabilite">Vulnérabilité</h3>
+<p>Une vulnérabilité (vulnerability en Anglais) est une faiblesse dans un système, une configuration, un logiciel ou un processus.</p>
+<p>Une vulnérabilité peut avoir plusieurs types :</p>
+<p>Technique : bug dans un logiciel, mauvaise implémentation ou défaut d'architecture.
+Humaine : ingénierie sociale, tel que le phishing par exemple.
+La plupart des vulnérabilités existantes sont consignées dans une base de données unique, appelée Common Vulnerabilities and Exposures Database (CVE Database), supervisée par l'organisme MITRE. Elles disposent d'un numéro unique dans cette base de données.</p>
+<p>Les détails techniques concernant les vulnérabilités sont quant à eux consignés dans d'autres bases de données, telle que la plus connue, la National Vulnerability Database (NVD) de l'organisme NIST.</p>
+<p>💡 Par exemple, une des vulnérabilités les plus critiques de ces derniers temps, connue sous le nom de Log4Shell, est enregistrée sous l'identifiant "CVE-2021-44228" et est décrite ici.</p>
+<p>Il existe deux manières de traiter une vulnérabilité :</p>
+<p>Corriger : appliquer un patch fourni par l'éditeur, modifier la configuration mal implémentée
+Contourner : appliquer une barrière qui rend la vulnérabilité impossible à exploiter, sans pour autant la corriger.
+💡 Exemple de contournement : l'interface web d'administration d'un firewall contient une vulnérabilité. Vous décidez de rendre indisponible cette interface, et d'administrer le firewall uniquement en ligne de commande.</p>
+<h3 id="menace">Menace</h3>
+<p>Une menace (threat en Anglais) est n'importe quel évènement pouvant vous porter un préjudice. Ces menaces peuvent être de différents types, même ceux auquel vous pensez le moins :</p>
+<p>Attaquant externes voulant vous extorquer de l'argent ou vous nuire.
+Catastrophes naturelles.
+Attaquant interne, tel qu'un salarié malveillant.
+Évènement extérieur, terrorisme, guerre.
+Afin de mieux comprendre les menaces qui concernent nos activités numériques, il existe un processus en cyber sécurité appelé "Cyber Threat Intelligence" (CTI).</p>
+<p>De nombreux outils et frameworks existent pour aider à comprendre et modéliser ces menaces, vous pouvez par exemple vous documenter sur ce qu'on appelle la "Cyber Kill Chain" en guise d'introduction (une leçon dédiée à la Kill Chain est disponible dans ce cours).</p>
+<h3 id="risque">Risque</h3>
+<p>Le risque (risk en Anglais) est la conjonction de la vulnérabilité et de la menace. Si votre système est vulnérable et qu'une menace se met à exécution, alors vous subissez des dommages.</p>
+<p>💡 Par exemple, si vous avez des équipements informatiques en sous-sol (vulnérabilité), le risque d'inondation existe lorsque survient un orage, de fortes pluies ou une tempête (menaces).</p>
+<p>C'est pourquoi l'un des processus essentiels en cyber sécurité est la gestion de ces risques.</p>
+<p>La gestion des risques peut se décomposer en plusieurs phases (volontairement simplifiées ici):</p>
+<ul>
+<li>La phase d'inventaire : il est primordial de commencer par inventorier ses ressources, leurs vulnérabilités et les menaces les concernant.</li>
+<li>La phase d'analyse : cette phase consiste à comprendre les probabilités d'occurrence ainsi que les impacts. Les impacts peuvent être qualitatifs (impossible d'utiliser l'application de comptabilité) ou quantitatifs (perte de 10 000 euros de matériel).</li>
+<li>
+<p>La phase de traitement : une fois les risques analysés, nous avons les informations nécessaires pour prendre la décision du plan de traitement. Il existe quatre méthodes principales pour traiter un risque :</p>
+<ul>
+<li>Acceptation : si l'on considère que les pertes sont acceptables en l'état, alors on accepte le risque sans le traiter.</li>
+<li>Délégation / Transfert / Partage : on peut faire porter tout ou partie des conséquences d'une menace sur un tiers, par exemple souscrire à une assurance, ou confier un périmètre à un prestataire.</li>
+<li>Eradication / Traitement : on met en place les actions et contrôles nécessaires pour faire disparaître totalement le risque.</li>
+<li>Réduction : on met en place les actions et contrôles nécessaires pour réduire en partie le risque, à un niveau d'impact jugé acceptable. </li>
+</ul>
+</li>
+</ul>
+<h3 id="le-concept-zero-trust">Le concept "zero trust"</h3>
+<p>"Zero trust" est un concept de cyber sécurité qui réunit plusieurs des bonnes pratiques déjà évoquées lors de ce cours.</p>
+<p>Ce concept veut corriger certaines faiblesses qu'ont connu les mécanismes de protection dans le passé en accordant trop de confiance à certains éléments.</p>
+<p>💡 Par exemple, il était communément admis dans le passé qu'un poste de travail se connectant au réseau de l'entreprise était forcément un poste de travail légitime.</p>
+<p>Le concept "zero trust" se fonde sur trois grands piliers :</p>
+<ul>
+<li>Vérification explicite : l'authentification ne doit pas se limiter aux utilisateurs, il faut authentifier tout ce qui accède aux services et aux données (terminaux, applications, etc.).</li>
+<li>Principe du moindre privilège : donner des accès minimums pour accomplir les tâches.</li>
+<li>Se préparer à l'incident : dans le concept "zero trust" on considère que l'incident de sécurité est inévitable et qu'il faut s'y préparer pour réduire l'impact au maximum et réagir efficacement.
+Pour aller plus loin, n'hésitez pas à consulter le document de l'ANSSI : Avis scientifique et technique : le modèle Zero Trust</li>
+</ul>
+<h2 id="kill-chain">Kill Chain</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Le concept de "Kill Chain" est encore une fois un concept qui vient du monde militaire.</p>
+<p>Dans l'univers de la cyber sécurité, ce concept est rattaché au domaine de la "Cyber Threat Intelligence" (CTI), qui est le domaine où l'on recherche des renseignements sur les attaquants afin de mieux s'en protéger.</p>
+<p>Le concept de "Kill Chain" a été mis en oeuvre dans deux référentiels différents, que nous allons découvrir dans cette leçon.</p>
+<h3 id="cyber-kill-chain">Cyber Kill Chain</h3>
+<p><img alt="Cyber Kill Chain" src="../../assets/Images/Cybersecurity/cyberKillChain.png" />
+Le référentiel "Cyber Kill Chain" a été publié en 2011 par la société Lockheed Martin. Dans la "Cyber Kill Chain", on décompose une cyber attaque en 7 étapes chronologiques :</p>
+<ul>
+<li>Reconnaissance</li>
+<li>Weaponization (Armement)</li>
+<li>Delivery (Livraison)</li>
+<li>Exploitation</li>
+<li>Installation</li>
+<li>Command &amp; Control (Contrôle à distance)</li>
+<li>Actions on Objectives (But final)</li>
+</ul>
+<h4 id="reconnaissance">Reconnaissance</h4>
+<p>Dans cette première phase, l'attaquant va chercher à collecter le plus d'informations possibles sur sa cible.
+Si des informations techniques vont être récoltées grâce à des outils (nom des domaines, adresses IP, etc.), l'attaquant va aussi utiliser l'OpenSource Intelligence (OSINT), pour collecter des informations disponibles publiquement, par exemple sur des réseaux sociaux ou des sites d'information (adresse e-mail, noms et fonctions de salariés).</p>
+<h4 id="weaponization-armement">Weaponization (Armement)</h4>
+<p>Une fois l'attaquant bien renseigné sur sa victime, il va pouvoir composer un arsenal adapté pour mettre son plan à exécution.
+Il aura la possibilité de choisir parmi des outils existants (par exemple des outils non malveillants mais qui seront alors détournés de leur fonction initiale), acheter des logiciels malveillants, ou concevoir lui même ses propres outils.</p>
+<h4 id="delivery-livraison">Delivery (Livraison)</h4>
+<p>Après l'arsenal bien préparé, l'attaquant va devoir trouver un moyen de transférer tout ou partie de son armement chez sa victime (payload en Anglais).
+Pour cela l'attaquant dispose de plusieurs solutions, parmi les plus connues :
+- e-mail de phishing (hameçonnage).
+- compromission d'un fournisseur (supply chain).
+- ingénierie sociale, par exemple déposer une clé USB piégée dans le parking de l'entreprise (social engineering).</p>
+<h4 id="exploitation">Exploitation</h4>
+<p>Dans cette phase, le payload de l'attaquant est exécuté, et va exploiter une vulnérabilité pour obtenir un accès initial (foothold) sur le système d'information de sa cible.</p>
+<h4 id="installation">Installation</h4>
+<p>Après avoir obtenu un premier accès, l'attaquant doit maintenant faire en sorte d'avoir un accès durable au système d'information.
+Cela signifie que s'il perd la connexion (en cas de redémarrage du système par exemple), il ne doit pas avoir à répéter les précédentes phases pour retrouver son accès.
+Il existe plusieurs techniques pour garder un accès à la cible :
+- Porte dérobée (backdoor).
+- Tâche planifiée (scheduled task).
+- Web shell pour les serveurs web.
+- Ajouter un service malveillant.</p>
+<h4 id="command-control-controle-a-distance">Command &amp; Control (Contrôle à distance)</h4>
+<p>L'attaquant va désormais chercher à pouvoir travailler efficacement, qu'avec un accès initial parfois limité.
+Il va donc utiliser un outil de command and control (abrégé C2 ou C&amp;C), qui lui permet d'effectuer toutes ses opérations à distance, depuis une interface préparée pour son attaque.
+Parmi les outils de Command and Control les plus connus :
+- Cobalt Strike
+- Empire
+- Nighthawk</p>
+<h4 id="actions-on-objectives-but-final">Actions on Objectives (But final)</h4>
+<p>La dernière étape pour l'attaquant est bien entendu de réaliser ses objectifs. Ayant désormais accès au système d'information de la victime, il va pouvoir atteindre son but, soit de manière indirecte :
+- Latéralisation (lateral movement)
+- Reconnaissance interne
+- Élévation de privilèges (privilege escalation)
+Soit de manière directe :
+- Espionnage
+- Rançon</p>
+<h3 id="unified-kill-chain">Unified Kill Chain</h3>
+<p>Unified Kill Chain (abrégée UKC) est un autre référentiel de "kill chain" adapté à la cyber sécurité.</p>
+<p><img alt="Unified Kill Chain" src="../../assets/Images/Cybersecurity/unifiedKillChain.png" /></p>
+<p>Ce référentiel, complémentaire de la "Cyber Kill Chain", a été publié pour la première fois en 2017 et est beaucoup plus détaillé, puisqu'il comporte 18 phases.</p>
+<p>Notons que ces 18 phases ne sont pas systématiquement toutes mises en oeuvre durant une attaque. Elles sont découpées en trois grandes étapes, que nous allons aborder maintenant.</p>
+<h4 id="etape-in">Étape "In"</h4>
+<p>L'étape "In" est l'étape d'accès initial, et elle contient les phases suivantes :
+- Reconnaissance.
+- Weaponization.
+- Social Engineering.
+- Exploitation.
+- Persistence.
+- Defense Evasion.
+- Command &amp; Control.</p>
+<h4 id="etape-through">Étape "Through"</h4>
+<p>L'étape "Through" est l'étape ou l'attaquant va prendre le contrôle du système d'information de la cible, les phases sont les suivantes :
+- Pivoting.
+- Discovery (reconnaissance interne).
+- Privilege Escalation.
+- Execution.
+- Credential Access.
+- Lateral Movement.</p>
+<h4 id="etape-out">Étape "Out"</h4>
+<p>Tout comme dans la dernière étape de la "Cyber Kill Chain" l'attaquant a maintenant les accès nécessaire au système d'information de sa victime pour réaliser ses objectifs. Les dernières phases de la "Unified Kill Chain" sont :
+- Access.
+- Collection.
+- Exfiltration.
+- Impact.
+- Objectives.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
