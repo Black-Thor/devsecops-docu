@@ -5,10 +5,23 @@ nav:
   - Acceuil : index.md
   - Culture DevOps: 
     - 'Devops/Culture/introduction.md'
+    - Déploiement:
+      - 'Devops/Deploiement/introduction.md'
+  - DevSecOps: 
+    - 'DevSecOps/Culture/introduction.md'
+    - Dans la pratique:
+      - 'DevSecOps/Culture/pratique.md'
+  - Cybersécurité: 
+    - 'Cybersecurity/introduction.md'
   - Conteneurisation: 
     - Docker: 
       - 'Conteneurisation/Docker/index.md'
       - 'Conteneurisation/Docker/images.md'
+  - API:
+    - 'api/index.md'
+    - TP:
+      - 'api/TP/exercice.md'
+
   #     - 'Conteneurisation/Docker/docker.md'
   #   - Kubernetes:
   #     - 'Conteneurisation/Kubernetes/kubernetes.md'
