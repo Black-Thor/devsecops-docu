@@ -64,5 +64,6 @@ Le DevOps repose également sur la mise en place d'outils d'automatisation couvr
 
 En adoptant les pratiques DevOps, les entreprises peuvent surmonter le Mur de la Confusion et améliorer la collaboration entre les équipes de développement et d'opérations, tout en assurant la satisfaction du client.
 
+
 # Ressources
 https://devopscube.com/become-devops-engineer/
