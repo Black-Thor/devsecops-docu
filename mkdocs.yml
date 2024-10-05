@@ -12,6 +12,7 @@ nav:
       - 'Devops/Culture/pillier_2.md'
       - 'Devops/Culture/pillier_3.md'
       - 'Devops/Culture/pillier_4.md'
+      - 'Devops/Culture/Comprehension.md'
     - Déploiement:
       - 'Devops/Deploiement/introduction.md'
   - DevSecOps: 
@@ -28,13 +29,13 @@ nav:
     - 'api/index.md'
     - TP:
       - 'api/TP/exercice.md'
-
   #     - 'Conteneurisation/Docker/docker.md'
   #   - Kubernetes:
   #     - 'Conteneurisation/Kubernetes/kubernetes.md'
   # - Information: about.md
   - Blog:
     - blog/index.md
+    - blog/Shortcut.md
 plugins:
   - search
   - blog
