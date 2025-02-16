@@ -21,14 +21,14 @@ nav:
     - Docker: 
       - 'Conteneurisation/Docker/index.md'
       - 'Conteneurisation/Docker/images.md'
+    - Kubernetes:
+      - 'Conteneurisation/Kubernetes/Kubernetes.md'
+      - 'Conteneurisation/Kubernetes/Kubernetes-architecture.md'
+      - 'Conteneurisation/Kubernetes/Kubernetes-resources.md'
   - API:
     - 'api/index.md'
     - TP:
       - 'api/TP/exercice.md'
-  #     - 'Conteneurisation/Docker/docker.md'
-  #   - Kubernetes:
-  #     - 'Conteneurisation/Kubernetes/kubernetes.md'
-  # - Information: about.md
   - Blog:
     - blog/index.md
     - blog/Shortcut.md

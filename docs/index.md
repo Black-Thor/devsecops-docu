@@ -25,3 +25,9 @@ python -m mkdocs serve
 Please see the [project license](about.md) for further details.
 
 Please see the [project license](Conteneurisation/information.md) for further details.
+
+
+
+TODO : 
+PRincipe de base du réseaux  / URL / DNS / code erreur http / 
+Vecteur commun d'attaque 

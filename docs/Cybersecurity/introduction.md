@@ -305,3 +305,5 @@ Tout comme dans la dernière étape de la "Cyber Kill Chain" l'attaquant a maint
 - Exfiltration.
 - Impact.
 - Objectives.
+
+
