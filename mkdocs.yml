@@ -1,37 +1,62 @@
-site_name: Ma documentation DevSecOps
+site_name: Ma Documentation DevSecOps
 theme:
   name: material
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.annotate
+    - content.tabs.link
+    - toc.integrate
 
 nav:
-  - Acceuil : index.md
-  - Culture DevOps: 
-    - 'Devops/Culture/introduction.md'
-    - Pillier:
-      - 'Devops/Culture/pillier_devops.md'
-      - 'Devops/Culture/Comprehension.md'
-    - Déploiement:
-      - 'Devops/Deploiement/introduction.md'
-  - DevSecOps: 
-    - 'DevSecOps/Culture/introduction.md'
-    - Dans la pratique:
-      - 'DevSecOps/Culture/pratique.md'
-  - Cybersécurité: 
-    - 'Cybersecurity/introduction.md'
-  - Conteneurisation: 
-    - Docker: 
-      - 'Conteneurisation/Docker/index.md'
-      - 'Conteneurisation/Docker/images.md'
+  - Accueil: index.md
+  - DevOps & DevSecOps:
+    - Introduction: devops/devsecops.md
+    - Culture DevOps:
+      - Présentation: devops/culture/introduction.md
+      - Piliers: devops/culture/piliers.md
+      - Compréhension: devops/culture/comprehension.md
+    - DevSecOps:
+      - Introduction: devsecops/culture/introduction.md
+      - En pratique: devsecops/culture/pratique.md
+    - Pipeline sécurisé:
+      - CI/CD: devsecops/cicd/pipelines.md
+      - Outils: devsecops/cicd/outils.md
+  - Cybersécurité:
+    - Introduction: cybersecurity/introduction.md
+    - Normes: cybersecurity/normes.md
+    - Bonnes pratiques: cybersecurity/best-practices.md
+  - Conteneurisation:
+    - Docker:
+      - Présentation: conteneurisation/docker/index.md
+      - Bonnes pratiques: conteneurisation/docker/best-practices.md
+      - Sécurité: conteneurisation/docker/security.md
     - Kubernetes:
-      - 'Conteneurisation/Kubernetes/Kubernetes.md'
-      - 'Conteneurisation/Kubernetes/Kubernetes-architecture.md'
-      - 'Conteneurisation/Kubernetes/Kubernetes-resources.md'
+      - Présentation: conteneurisation/kubernetes/introduction.md
+      - Architecture: conteneurisation/kubernetes/architecture.md
+      - Ressources: conteneurisation/kubernetes/resources.md
+      - Sécurité: conteneurisation/kubernetes/security.md
   - API:
-    - 'api/index.md'
-    - TP:
-      - 'api/TP/exercice.md'
+    - Introduction: api/index.md
+    - Exercices pratiques: api/TP/exercice.md
   - Blog:
-    - blog/index.md
-    - blog/Shortcut.md
+    - Articles: blog/index.md
+    - Astuces: blog/Shortcut.md
+    - Notes techniques: blog/tech-notes.md
+
 plugins:
   - search
-  - blog
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+  - glightbox  # Pour agrandir les images
+  - git-revision-date-localized  # Pour afficher la date de dernière mise à jour
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.emoji
+  - pymdownx.magiclink
