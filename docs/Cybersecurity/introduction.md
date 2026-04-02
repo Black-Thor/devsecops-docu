@@ -1,9 +1,15 @@
-## Introduction à la Cybersécurité
-Une donnée, dans le monde informatique, est une information qui peut être stockée ou traitée numériquement.
+---
+title: Introduction à la Cybersécurité
+description: Triade DIC, authentification, autorisation, Zero Trust, Kill Chain
+---
 
-Un des principaux objectifs de la cyber sécurité est avant tout de protéger les données de l'entreprise ou d'un individu.
+# Introduction à la Cybersécurité
 
-Nous allons étudier dans cette leçon les critères permettant de classifier ces données afin de mettre en place des solutions de protection adéquates.
+Un des principaux objectifs de la cybersécurité est de **protéger les données** d'une
+entreprise ou d'un individu. Nous étudions ici les critères permettant de classifier
+ces données afin de mettre en place des solutions de protection adéquates.
+
+---
 
 
 ### La triade DIC (+TN)
@@ -18,14 +24,24 @@ Le critère de disponibilité évalue la garantie d'avoir accès à la donnée l
 
 💡 Exemple : Lorsqu'un traitement automatisé va récupérer les données d'absence d'un salarié afin de calculer son salaire du mois, les données doivent être disponibles à chaque lancement du traitement, sinon il échoue.
 
+    **Garantie d'accès à la donnée** lorsqu'on en a besoin.
 
+    !!! example "Exemple"
+        Un traitement automatisé récupère les données d'absence d'un salarié pour
+        calculer son salaire. Les données **doivent être disponibles** à chaque
+        lancement du traitement, sinon il échoue.
+        
 Intégrité (Integrity)
 
 Le critère d'intégrité évalue la garantie que l'état de la donnée n'a pas été modifié par rapport à son état original.
 
 💡 Exemple : Dans une boutique en ligne, on ne doit pas pouvoir modifier les prix des produits disponibles si l'on est un client.
 
- 
+     **Garantie que l'état de la donnée** n'a pas été modifié par rapport à son état original.
+
+    !!! example "Exemple"
+        Dans une boutique en ligne, un client **ne doit pas pouvoir modifier**
+        les prix des produits.
 
 Confidentialité (Confidentiality)
 
@@ -33,14 +49,32 @@ Le critère de confidentialité évalue la garantie que l'accès à la donnée e
 
 💡 Exemple : Les motifs d'arrêt maladie doivent être consultables par le personnel habilité de l'assurance maladie, mais pas par l'employeur.
 
- 
+     **Garantie que seules les personnes autorisées** peuvent accéder à la donnée
+    (besoin d'en connaître).
+
+    !!! example "Exemple"
+        Les motifs d'arrêt maladie sont consultables par le personnel habilité
+        de l'assurance maladie, **mais pas par l'employeur**.
+
 
 ### TN
 Bien que la triade DIC nous permette d'évaluer la sensibilité de la donnée afin d'y appliquer les justes mécanismes de protection, cette triade peut être étendue grâce à deux nouveaux critères.
 
 Ces critères vont nous permettre en plus de la protection de la donnée, de nous faciliter le travail en cas d'incident impliquant ces données.
 
- ![La triade TN](../../assets/Images/Cybersecurity/TN.png)
+![La triade TN](../assets/Images/Cybersecurity/TN.png){ loading=lazy }
+
+!!! note "Traçabilité"
+    Garantie de connaître **de manière datée** tout ce qui s'est produit — accès ou
+    modification d'une donnée.
+
+    **Exemple :** Journal horodaté de toutes les consultations d'une base de données.
+
+!!! note "Non-répudiation"
+    Extension de la traçabilité : garantie de savoir **qui** a effectué une action,
+    sans que celui-ci puisse le nier. Implémenté via la **signature numérique**.
+
+---
 
 
 Traçabilité (Accounting)
@@ -58,7 +92,11 @@ Le critère de non répudiation évalue la garantie de savoir qui a effectué un
 
 ## Authentification
 
- ![IAM ](../../assets/Images/Cybersecurity/IAM.png)
+![IAM](../assets/Images/Cybersecurity/IAM.png){ loading=lazy }
+
+L'**authentification (AuthN)** est le processus de vérifier qu'une identité est bien
+celle qu'elle prétend être.
+
 L'authentification (authentication en Anglais, souvent abrégé "AuthN"), est le processus de vérifier qu'une identité est bien celle qu'elle prétend être.
 
 💡 Prenons l'exemple d'un site web avec un formulaire ayant deux champs, "adresse e-mail" et "mot de passe". Lorsque l'utilisateur saisit son adresse e-mail, il s'identifie. Lorsque l'utilisateur saisit son mot de passe et que le site web vérifie que le mot de passe saisi correspond à l'adresse e-mail saisie, l'utilisateur est authentifié.
@@ -76,8 +114,15 @@ Différents facteurs d'authentification (authentification factors) existent pour
 
 Le facteur géographique (localisation GPS, localisation de l'adresse IP)
  
+### Les facteurs d'authentification
 
-### L'authentification forte
+| Facteur | Description | Exemple |
+|---------|-------------|---------|
+| **Connaissance** | Ce que tu sais | Mot de passe, PIN, phrase de passe |
+| **Possession** | Ce que tu as | Application Authenticator, token physique |
+| **Biométrique** | Ce que tu es | Empreinte digitale, Face ID |
+| **Géographique** | Où tu es | Localisation GPS, adresse IP |
+
 L'authentification forte, également appelée authentification à facteurs multiples (multi-factor authentication, MFA), est une bonne pratique de sécurité pour augmenter la résistance de l'authentification aux attaques courantes (leaked credentials, password-spraying, brute-force, etc.).
 
 Pour qu'une authentification soit considérée comme forte, elle doit reposer sur au moins deux facteurs différents.
@@ -86,32 +131,64 @@ Plus le nombre de facteurs différents est élevé, plus l'authentification est 
 
 💡 Par exemple, si je saisis un mot de passe et un code pin, l'authentification ne sera pas considérée forte malgré le fait d'avoir fourni deux facteurs. En revanche si je saisis un mot de passe et que je valide la demande sur l'application Authenticator de mon téléphone, j'ai bien réalisé une authentification forte.
 
+
+#### Authentification forte (MFA)
+
+!!! warning "MFA obligatoire"
+    Pour qu'une authentification soit **forte (MFA)**, elle doit reposer sur
+    **au moins 2 facteurs différents**.
+
+    ❌ Mot de passe + code PIN = 2x facteur *connaissance* → **pas du MFA**
+
+    ✅ Mot de passe + validation sur téléphone = connaissance + possession → **MFA** ✓
+
+---
+
 ### Autorisation
 L'autorisation (authorization en Anglais, souvent abrégé "AuthZ"), est le processus de vérifier tout ce qu'une identité peut effectuer.
 
 💡 Par exemple, lorsqu'un étudiant se connecte au site web de son école, il peut consulter ses relevés de notes, mais il n'est pas autorisé à modifier les notes.
 
-Les différents types d'autorisation
-Plusieurs modèles d'autorisation existent et peuvent cohabiter ou se superposer au sein d'un même périmètre :
 
-- Role-based Access Control (RBAC) : les autorisations sont basées sur un rôle fonctionnel de l'identité.
-> Exemple : Rôle d'administrateur de la base de données.
+### Modèles d'autorisation
 
-- Rule-based Access Control (RuBAC) : les autorisations sont basées sur des règles prédéfinies.
-> Exemple : L'utilisateur Matthieu a accès au serveur entre 8 heures et 20 heures.
+=== "RBAC"
 
-- Discretionary Access Control (DAC) : les autorisations sont basées sur des droits définis par le propriétaire de l'objet.
-> Exemple : Matthieu est propriétaire du fichier "liste_primes.pdf" et donne l'accès en lecture à Thomas et en écriture à Max.
+    **Role-Based Access Control** — droits basés sur un rôle fonctionnel.
 
-- Mandatory Access Control (MAC) : les autorisations sont basées sur des règles définies par l'administrateur, par défaut on rejette toutes les demandes d'autorisation.
-> Exemple : L'équipe RH doit être la seule habilitée à visualiser les montants des salaires de tous les employés. L'administrateur a explicitement donné un droit nominatif à chaque membre de l'équipe RH.
+    > Rôle "Administrateur de base de données"
 
-- Attribute-based Access Control (ABAC) : les autorisations sont basées sur plusieurs attributs de l'identité.
-> Exemple : L'accès sur l'intranet à la page du site de Tours est uniquement possible aux utilisateurs ayant comme localisation "Tours" dans l'annuaire de l'entreprise.
+=== "RuBAC"
 
-Au quotidien, chacun de ces modèles d'autorisation ont leurs avantages et leurs inconvénients. C'est pourquoi il convient de choisir avec précaution quel modèle utiliser et combiner différents modèles.
+    **Rule-Based Access Control** — droits basés sur des règles prédéfinies.
 
- ![ABAC](../../assets/Images/Cybersecurity/ABAC.png)
+    > L'utilisateur a accès au serveur entre 8h et 20h.
+
+=== "DAC"
+
+    **Discretionary Access Control** — droits définis par le propriétaire de l'objet.
+
+    > Matthieu donne l'accès en lecture à Thomas et en écriture à Max.
+
+=== "MAC"
+
+    **Mandatory Access Control** — droits définis par l'administrateur, tout refusé par défaut.
+
+    > Seule l'équipe RH peut voir les salaires.
+
+=== "ABAC"
+
+    **Attribute-Based Access Control** — droits basés sur plusieurs attributs.
+
+    > Accès autorisé si `rôle = RH ET localisation = Paris`.
+
+![ABAC](../assets/Images/Cybersecurity/ABAC.png){ loading=lazy }
+
+!!! tip "Principe du moindre privilège"
+    Accorder à chaque utilisateur **uniquement les droits minimums** nécessaires
+    à la réalisation de son travail. Concept issu du monde militaire — "besoin d'en connaître".
+
+---
 
 
 💡 Par exemple sur un partage de fichier, l'accès peut être globalement donné à tous les salariés de l'entreprise. En revanche le dossier "RH" est accessible à tous les utilisateurs ayant le rôle "Responsable RH" (RBAC). Le sous-dossier "Paris" est accessible uniquement aux personnes ayant le rôle "Responsable RH" et l'attribut "Localisation = Paris" (ABAC). Enfin, dans ce sous dossier, un document "bonus.pdf" est consultable uniquement par David et Marc (MAC).
@@ -133,9 +210,52 @@ le contenu du journal doit être qualitatif (simple, compréhensible mais sans o
 le système de gestion des évènements doit être robuste, suffisamment dimensionné et sauvegardé selon les objectifs de rétention.
 Pour aller plus loin sur le sujet, vous pouvez consulter le guide référence de l'ANSSI, Recommandations de sécurité pour l'architecture d'un système de journalisation.
 
-## Vulnérabilité, menace et risque
 
-Ces notions sont des bases essentielles pour mettre en oeuvre des processus de gestion des vulnérabilités et de gestion des risques.
+## Vulnérabilité, Menace et Risque
+
+```mermaid
+graph LR
+    V[🐛 Vulnérabilité\nFaiblesse du système] --> R{⚠️ RISQUE}
+    M[💀 Menace\nActeur ou événement] --> R
+    R --> D[💥 Dommages]
+```
+
+=== "Vulnérabilité"
+
+    Faiblesse dans un système, une configuration, un logiciel ou un processus.
+
+    | Type | Exemple |
+    |------|---------|
+    | **Technique** | Bug logiciel, mauvaise architecture |
+    | **Humaine** | Phishing, ingénierie sociale |
+
+    Les vulnérabilités connues sont référencées dans la **CVE Database** (MITRE)
+    et détaillées dans la **NVD** (NIST).
+
+    !!! example "CVE célèbre : Log4Shell"
+        Identifiant : `CVE-2021-44228` — l'une des plus critiques de ces dernières années.
+
+=== "Menace"
+
+    N'importe quel événement pouvant causer un préjudice :
+
+    - Attaquants externes (ransomware, espionnage)
+    - Catastrophes naturelles
+    - Salarié malveillant (insider threat)
+    - Terrorisme, guerre
+
+=== "Risque"
+
+    Le risque est la **conjonction** de la vulnérabilité et de la menace.
+
+    **4 méthodes de traitement :**
+
+    1. **Acceptation** — les pertes sont jugées acceptables
+    2. **Transfert** — assurance, prestataire externe
+    3. **Éradication** — correction totale du risque
+    4. **Réduction** — diminution partielle à un niveau acceptable
+
+
 
 ### Vulnérabilité
 Une vulnérabilité (vulnerability en Anglais) est une faiblesse dans un système, une configuration, un logiciel ou un processus.
@@ -150,7 +270,6 @@ Les détails techniques concernant les vulnérabilités sont quant à eux consig
 
 💡 Par exemple, une des vulnérabilités les plus critiques de ces derniers temps, connue sous le nom de Log4Shell, est enregistrée sous l'identifiant "CVE-2021-44228" et est décrite ici.
 
- 
 
 Il existe deux manières de traiter une vulnérabilité :
 
@@ -187,7 +306,19 @@ La gestion des risques peut se décomposer en plusieurs phases (volontairement s
     - Eradication / Traitement : on met en place les actions et contrôles nécessaires pour faire disparaître totalement le risque.
     - Réduction : on met en place les actions et contrôles nécessaires pour réduire en partie le risque, à un niveau d'impact jugé acceptable. 
 
-### Le concept "zero trust"
+### Le concept Zero Trust
+
+!!! info "Zero Trust — 3 piliers"
+
+    1. **Vérification explicite** — authentifier tout ce qui accède aux ressources
+       (utilisateurs, terminaux, applications)
+    2. **Principe du moindre privilège** — accès minimums pour accomplir les tâches
+    3. **Se préparer à l'incident** — l'incident est inévitable, réduire l'impact
+
+    📄 [Avis ANSSI sur le modèle Zero Trust](https://www.ssi.gouv.fr)
+
+---
+
 "Zero trust" est un concept de cyber sécurité qui réunit plusieurs des bonnes pratiques déjà évoquées lors de ce cours.
 
 Ce concept veut corriger certaines faiblesses qu'ont connu les mécanismes de protection dans le passé en accordant trop de confiance à certains éléments.
@@ -210,18 +341,22 @@ Dans l'univers de la cyber sécurité, ce concept est rattaché au domaine de la
 Le concept de "Kill Chain" a été mis en oeuvre dans deux référentiels différents, que nous allons découvrir dans cette leçon.
 
 
-### Cyber Kill Chain
+### Cyber Kill Chain (Lockheed Martin, 2011)
 
-![Cyber Kill Chain](../assets/Images/Cybersecurity/cyberKillChain.png)
+![Cyber Kill Chain](../assets/Images/Cybersecurity/cyberKillChain.png){ loading=lazy }
+
+| Étape | Description |
+|-------|-------------|
+| **1. Reconnaissance** | Collecte d'informations sur la cible (OSINT, scan réseau) |
+| **2. Weaponization** | Préparation de l'arsenal adapté à la cible |
+| **3. Delivery** | Envoi du payload (phishing, clé USB, supply chain) |
+| **4. Exploitation** | Exécution du payload, accès initial (*foothold*) |
+| **5. Installation** | Persistance — backdoor, scheduled task, web shell |
+| **6. C2** | Command & Control — contrôle à distance (Cobalt Strike, Empire) |
+| **7. Actions** | But final — espionnage, ransomware, latéralisation |
+
+
 Le référentiel "Cyber Kill Chain" a été publié en 2011 par la société Lockheed Martin. Dans la "Cyber Kill Chain", on décompose une cyber attaque en 7 étapes chronologiques :
-
-- Reconnaissance
-- Weaponization (Armement)
-- Delivery (Livraison)
-- Exploitation
-- Installation
-- Command & Control (Contrôle à distance)
-- Actions on Objectives (But final)
  
 
 #### Reconnaissance
@@ -270,40 +405,24 @@ Soit de manière directe :
 - Espionnage
 - Rançon
 
-### Unified Kill Chain
-Unified Kill Chain (abrégée UKC) est un autre référentiel de "kill chain" adapté à la cyber sécurité.
+### Unified Kill Chain (2017)
 
-![Unified Kill Chain](../assets/Images/Cybersecurity/unifiedKillChain.png)
+![Unified Kill Chain](../assets/Images/Cybersecurity/unifiedKillChain.png){ loading=lazy }
+
+18 phases regroupées en 3 grandes étapes :
+
+=== "In — Accès initial"
+    Reconnaissance · Weaponization · Social Engineering ·
+    Exploitation · Persistence · Defense Evasion · C2
+
+=== "Through — Prise de contrôle"
+    Pivoting · Discovery · Privilege Escalation ·
+    Execution · Credential Access · Lateral Movement
+
+=== "Out — Objectifs"
+    Access · Collection · Exfiltration · Impact · Objectives
+
 
 Ce référentiel, complémentaire de la "Cyber Kill Chain", a été publié pour la première fois en 2017 et est beaucoup plus détaillé, puisqu'il comporte 18 phases.
 
 Notons que ces 18 phases ne sont pas systématiquement toutes mises en oeuvre durant une attaque. Elles sont découpées en trois grandes étapes, que nous allons aborder maintenant.
-
-#### Étape "In"
-L'étape "In" est l'étape d'accès initial, et elle contient les phases suivantes :
-- Reconnaissance.
-- Weaponization.
-- Social Engineering.
-- Exploitation.
-- Persistence.
-- Defense Evasion.
-- Command & Control.
- 
-#### Étape "Through"
-L'étape "Through" est l'étape ou l'attaquant va prendre le contrôle du système d'information de la cible, les phases sont les suivantes :
-- Pivoting.
-- Discovery (reconnaissance interne).
-- Privilege Escalation.
-- Execution.
-- Credential Access.
-- Lateral Movement.
- 
-#### Étape "Out"
-Tout comme dans la dernière étape de la "Cyber Kill Chain" l'attaquant a maintenant les accès nécessaire au système d'information de sa victime pour réaliser ses objectifs. Les dernières phases de la "Unified Kill Chain" sont :
-- Access.
-- Collection.
-- Exfiltration.
-- Impact.
-- Objectives.
-
-

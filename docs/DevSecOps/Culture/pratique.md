@@ -1,3 +1,188 @@
+---
+title: DevSecOps en pratique
+description: Mise en œuvre concrète du DevSecOps — outils, pipeline et bonnes pratiques
+---
+
+# DevSecOps en pratique
+
+!!! abstract "De la théorie à la pratique"
+    Cette page traduit les concepts DevSecOps en **actions concrètes** :
+    quels outils intégrer, à quelle étape du pipeline, et comment.
+
+---
+
+## La chaîne outillage DevSecOps
+
+```mermaid
+graph LR
+    IDE[🖥️ IDE\nSonarLint / Snyk] --> SCM[📁 SCM\nGit + PR]
+    SCM --> CI[🔨 CI Pipeline]
+    CI --> SAST[🔍 SAST\nSonarQube]
+    CI --> SCA[📦 SCA\nTrivy / Snyk]
+    CI --> SECRETS[🔑 Secrets\ngit-leaks]
+    SAST --> STAGING[🧪 Staging]
+    SCA --> STAGING
+    STAGING --> DAST[🌐 DAST\nOWASP ZAP]
+    DAST --> PROD[🚀 Production]
+    PROD --> MONITOR[📊 Monitoring\nSIEM / WAF]
+```
+
+---
+
+## Les 4 types d'analyse de sécurité
+
+=== "SAST — Static Application Security Testing"
+
+    **Analyse le code source** sans l'exécuter.
+
+    | Outil | Langage | Licence |
+    |-------|---------|---------|
+    | **SonarQube** | Multi-langage | Community / Commercial |
+    | **Semgrep** | Multi-langage | Open-source |
+    | **Checkmarx** | Multi-langage | Commercial |
+    | **Bandit** | Python | Open-source |
+    | **ESLint (security)** | JavaScript | Open-source |
+
+    !!! tip "Intégration GitHub Actions"
+        ```yaml
+        - name: SonarQube Scan
+          uses: SonarSource/sonarqube-scan-action@master
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        ```
+
+=== "DAST — Dynamic Application Security Testing"
+
+    **Teste l'application en cours d'exécution** en simulant des attaques.
+
+    | Outil | Type | Note |
+    |-------|------|------|
+    | **OWASP ZAP** | Proxy + Scanner | Open-source, référence |
+    | **Burp Suite** | Proxy interactif | Community / Pro |
+    | **Nikto** | Scanner web | Open-source |
+
+    !!! example "OWASP ZAP en mode headless (CI)"
+        ```bash
+        docker run -t owasp/zap2docker-stable zap-baseline.py \
+          -t https://mon-app-staging.example.com \
+          -r zap-report.html
+        ```
+
+=== "SCA — Software Composition Analysis"
+
+    **Analyse les dépendances** (librairies tierces) pour détecter les CVE connues.
+
+    | Outil | Usage | Licence |
+    |-------|-------|---------|
+    | **Trivy** | Images Docker + filesystem | Open-source |
+    | **Snyk** | Code + containers + IaC | Freemium |
+    | **OWASP Dependency-Check** | Librairies | Open-source |
+
+    !!! tip "Scanner une image Docker avec Trivy"
+        ```bash
+        # Installation
+        brew install trivy  # macOS
+        # ou
+        docker run aquasec/trivy image mon-app:latest
+
+        # Scan avec seuil de criticité
+        trivy image --exit-code 1 --severity HIGH,CRITICAL mon-app:latest
+        ```
+
+=== "Secrets Detection"
+
+    **Détecter les secrets** (clés API, tokens, mots de passe) dans le code.
+
+    | Outil | Intégration |
+    |-------|-------------|
+    | **Gitleaks** | Pre-commit + CI |
+    | **TruffleHog** | Git history |
+    | **detect-secrets** | Pre-commit hook |
+
+    !!! danger "Règle d'or"
+        Un secret commité dans Git est **compromis** — même si supprimé ensuite.
+        L'historique Git conserve tout.
+
+    ```bash
+    # Gitleaks — scanner le repo
+    gitleaks detect --source . --verbose
+
+    # En pre-commit hook
+    gitleaks protect --staged
+    ```
+
+---
+
+## Pipeline GitHub Actions complet
+
+```yaml
+name: DevSecOps Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Nécessaire pour gitleaks
+
+      # 1. Détection de secrets
+      - name: Gitleaks — Secrets Detection
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. SAST
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+      # 3. Build de l'image
+      - name: Build Docker image
+        run: docker build -t mon-app:${{ github.sha }} .
+
+      # 4. SCA — Scan de l'image
+      - name: Trivy — Container Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: mon-app:${{ github.sha }}
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+```
+
+---
+
+## Bonnes pratiques au quotidien
+
+!!! check "À faire dans chaque équipe"
+    - [ ] Installer **SonarLint** dans tous les IDE (feedback immédiat)
+    - [ ] Configurer un **pre-commit hook** avec gitleaks
+    - [ ] Définir des **Quality Gates** SonarQube bloquants sur les PR
+    - [ ] Scanner les images Docker avant tout déploiement (Trivy)
+    - [ ] Former les développeurs aux **top 10 OWASP**
+    - [ ] Mettre en place un processus de **gestion des CVE** (priorisation)
+    - [ ] Réaliser un **pentest** au minimum une fois par an
+
+!!! quote "Principe clé"
+    La sécurité ne doit pas être un **frein** au développement.
+    Elle doit être invisible quand tout va bien, et claire quand il y a un problème.
+    
 ## Le linting
 Parce qu'un code sécurisé est avant tout un code propre, il est nécessaire que chaque développeur ait un outil ou une extension de type "lint" installé dans son éditeur de code (IDE - Integrated Development Environment).
 

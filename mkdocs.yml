@@ -1,63 +1,212 @@
 site_name: Ma Documentation DevSecOps
+site_url: https://black-thor.github.io/devsecops-docu/
+site_description: >
+  Base de connaissances personnelle sur DevOps, DevSecOps, la conteneurisation,
+  la cybersécurité et les bonnes pratiques CI/CD.
+site_author: Black-Thor
+repo_url: https://github.com/Black-Thor/devsecops-docu
+repo_name: Black-Thor/devsecops-docu
+edit_uri: edit/main/docs/
+
+# ─── Thème ────────────────────────────────────────────────────────────────────
 theme:
   name: material
-  features:
-    - navigation.expand
-    - navigation.sections
-    - navigation.top
-    - search.highlight
-    - content.code.annotate
-    - content.tabs.link
-    - toc.integrate
+  language: fr
+  logo: assets/Images/logo.png        # à créer (optionnel)
+  favicon: assets/Images/favicon.png  # à créer (optionnel)
 
+  palette:
+    # Mode sombre (défaut)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode clair
+    # Mode clair
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode sombre
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  features:
+    # Navigation
+    - navigation.tabs             # onglets de premier niveau dans la barre supérieure
+    - navigation.tabs.sticky      # onglets restent visibles au scroll
+    - navigation.sections         # sections groupées dans le sidebar
+    - navigation.expand           # sections ouvertes par défaut
+    - navigation.path             # fil d'Ariane dans le header
+    - navigation.top              # bouton "retour en haut"
+    - navigation.indexes          # page index pour chaque section
+    # Recherche
+    - search.highlight
+    - search.share
+    - search.suggest
+    # Contenu
+    - content.code.annotate       # annotations dans les blocs de code
+    - content.code.copy           # bouton copier sur les blocs de code
+    - content.tabs.link           # onglets de contenu synchronisés
+    - content.tooltips            # infobulles sur les abréviations
+    # ToC
+    - toc.follow                  # ToC suit le scroll
+
+# ─── Navigation ───────────────────────────────────────────────────────────────
 nav:
   - Accueil: index.md
-  - DevOps & DevSecOps:
-    - Introduction:
-        - devops/culture/introduction.md
+
+  - DevOps & CI/CD:
+    - devops/index.md
     - Culture DevOps:
-      - Présentation: devops/culture/introduction.md
-      - Piliers: devops/culture/piliers.md
+      - Introduction: devops/culture/introduction.md
+      - Les piliers: devops/culture/piliers.md
       - Compréhension: devops/culture/comprehension.md
-    - DevSecOps:
-      - Introduction: devsecops/culture/introduction.md
-      - En pratique: devsecops/culture/pratique.md
+    - Déploiement:
+      - Déploiement sans interruption: devops/deploiement/introduction.md
+    - CI/CD:
+      - Pipelines: devops/cicd/pipelines.md
+      - Outils CI/CD: devops/cicd/outils.md
+
+  - DevSecOps:
+    - DevSecOps/index.md
+    - Culture:
+      - Introduction: DevSecOps/Culture/introduction.md
+      - En pratique: DevSecOps/Culture/pratique.md
     - Pipeline sécurisé:
-      - CI/CD: devsecops/cicd/pipelines.md
-      - Outils: devsecops/cicd/outils.md
-  - Cybersécurité:
-    - Introduction: cybersecurity/introduction.md
-    - Normes: cybersecurity/normes.md
-    - Bonnes pratiques: cybersecurity/best-practices.md
+      - Vue d'ensemble: DevSecOps/cicd/pipelines.md
+      - Outils de sécurité: DevSecOps/cicd/outils.md
+
   - Conteneurisation:
+    - conteneurisation/index.md
     - Docker:
-      - Présentation: conteneurisation/docker/index.md
+      - Introduction: conteneurisation/docker/index.md
+      - Images & Layers: conteneurisation/docker/images.md
       - Bonnes pratiques: conteneurisation/docker/best-practices.md
-      - Sécurité: conteneurisation/docker/security.md
+      - Sécurité Docker: conteneurisation/docker/security.md
     - Kubernetes:
-      - Présentation: conteneurisation/kubernetes/introduction.md
+      - Introduction: conteneurisation/kubernetes/introduction.md
       - Architecture: conteneurisation/kubernetes/architecture.md
       - Ressources: conteneurisation/kubernetes/resources.md
-      - Sécurité: conteneurisation/kubernetes/security.md
-  - API:
-    - Introduction: api/index.md
-    - Exercices pratiques: api/TP/exercice.md
+      - Sécurité K8s: conteneurisation/kubernetes/security.md
+
+  - Cybersécurité:
+    - Cybersecurity/index.md
+    - Introduction: Cybersecurity/introduction.md
+    - Normes & Standards: Cybersecurity/normes.md
+    - Bonnes pratiques: Cybersecurity/best-practices.md
+    - Vecteurs d'attaque: Cybersecurity/vecteurs-attaque.md
+
+  - Réseaux & API:
+    - api/index.md
+    - Réseaux:
+      - Bases du réseau: api/reseau/bases.md
+      - HTTP & Codes d'erreur: api/reseau/http.md
+      - DNS: api/reseau/dns.md
+    - API REST:
+      - Aide-mémoire: api/rest/aide-memoire.md
+    - Travaux pratiques:
+      - Passage de paramètres: api/TP/exercice.md
+
   - Blog:
-    - Articles: blog/index.md
-    - Astuces: blog/Shortcut.md
+    - blog/index.md
+    - Raccourcis: blog/Shortcut.md
     - Notes techniques: blog/tech-notes.md
 
+# ─── Plugins ──────────────────────────────────────────────────────────────────
 plugins:
-  - search
+  - search:
+      lang: fr
   - blog:
       blog_dir: blog
       blog_toc: true
-  - glightbox
-  # - git-revision-date-localized
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      authors: true
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+  - minify:
+      minify_html: true
+  # Décommenter après avoir installé : pip install mkdocs-git-revision-date-localized-plugin
+  # - git-revision-date-localized:
+  #     enable_creation_date: true
+  #     type: timeago
 
+# ─── Extensions Markdown ──────────────────────────────────────────────────────
 markdown_extensions:
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.emoji
-  - pymdownx.magiclink
+  # Syntaxe code & highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # Onglets de contenu
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Emoji & icônes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  # Liens magiques (autolinks)
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: Black-Thor
+      repo: devsecops-docu
+  # Admonitions (notes, warnings, tips...)
+  - admonition
+  - pymdownx.details
+  # Listes de tâches
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # Touches clavier
+  - pymdownx.keys
+  # Critiques / annotations
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  # Abbréviations (infobulles)
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  # Métadonnées
+  - meta
+  # Table des matières
+  - toc:
+      permalink: true
+      title: Sur cette page
+
+# ─── CSS & JS personnalisés ───────────────────────────────────────────────────
+extra_css:
+  - assets/css/custom.css
+
+extra_javascript:
+  - assets/js/custom.js
+
+# ─── Footer & extras ──────────────────────────────────────────────────────────
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Black-Thor
+      name: Black-Thor sur GitHub
+  generator: false   # masque "Made with Material for MkDocs"
+
+copyright: >
+  © 2024 Black-Thor · Documentation personnelle DevSecOps ·
+  <a href="#__consent">Changer les préférences</a>
