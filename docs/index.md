@@ -1,33 +1,76 @@
-# Welcome to MkDocs
+# 🛡️ Bienvenue dans ma Documentation DevSecOps
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+![GitHub last commit](https://img.shields.io/github/last-commit/Black-Thor/devsecops-docu)
+![GitHub License](https://img.shields.io/github/license/Black-Thor/devsecops-docu)
+![MkDocs Material](https://img.shields.io/badge/MkDocs-Material-blue)
 
-## Commands
+> **Documentation centralisée** pour intégrer la sécurité dans les pipelines DevOps, avec des bonnes pratiques pour les développeurs, les équipes DevOps et les experts en cybersécurité.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+---
 
-## Project layout
+## 📌 À propos de ce projet
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Ce projet vise à fournir une **ressource complète** pour comprendre et implémenter les principes **DevSecOps**, en intégrant la sécurité dès la phase de conception et tout au long du cycle de vie du logiciel.
 
-## Mkdocs 
+### 🎯 Objectifs
+- **Shift Left** : Intégrer la sécurité dès le développement.
+- **Automatisation** : Utiliser des outils pour scanner et corriger les vulnérabilités.
+- **Collaboration** : Favoriser la communication entre les équipes Dev, Sec et Ops.
+- **Conformité** : Respecter les normes et réglementations (ISO 27001, SOC2, RGPD).
 
-Pour lancer mkdocs localement depuis powershell : 
-python -m mkdocs serve 
+---
 
+## 🚀 Navigation rapide
+   Section | Description |
+ |---------|-------------|
+ | **[DevOps & DevSecOps](devops/devsecops.md)** | Introduction aux principes DevSecOps, culture, et piliers. |
+ | **[Cybersécurité](cybersecurity/introduction.md)** | Normes, bonnes pratiques et outils pour sécuriser vos applications. |
+ | **[Conteneurisation](conteneurisation/docker/index.md)** | Sécurité des conteneurs Docker et Kubernetes. |
+ | **[API](api/index.md)** | Bonnes pratiques pour sécuriser vos APIs. |
+ | **[Blog](blog/index.md)** | Articles, astuces et retours d'expérience. |
 
-Please see the [project license](about.md) for further details.
+---
 
-Please see the [project license](Conteneurisation/information.md) for further details.
+## 🔧 Outils recommandés
+ | Outil | Type | Description |
+ |-------|------|-------------|
+ | **Trivy** | Scan de vulnérabilités | Scanner de conteneurs et dépendances. |
+ | **Snyk** | Scan de vulnérabilités | Détection et correction des vulnérabilités dans le code et les dépendances. |
+ | **GitHub Advanced Security** | SAST/DAST | Intégration native dans GitHub pour une sécurité automatisée. |
+ | **SonarQube** | Analyse de code | Qualité du code et détection des vulnérabilités. |
+ | **Kube-hunter** | Scan Kubernetes | Détection des vulnérabilités dans les clusters Kubernetes. |
 
+---
+## 📊 Statistiques du projet
 
+![GitHub stars](https://img.shields.io/github/stars/Black-Thor/devsecops-docu?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Black-Thor/devsecops-docu?style=social)
 
-TODO : 
-PRincipe de base du réseaux  / URL / DNS / code erreur http / 
-Vecteur commun d'attaque 
+---
+## 🤝 Contribution
+
+Ce projet est **open source** et ouvert aux contributions !
+
+### Comment contribuer ?
+1. **Fork** le dépôt.
+2. Crée une branche pour tes modifications : `git checkout -b feature/ma-suggestion`.
+3. Commit tes changements : `git commit -m 'Ajout : description de ma contribution'`.
+4. Push tes modifications : `git push origin feature/ma-suggestion`.
+5. Ouvre une **Pull Request** pour review.
+
+### Rejoins la communauté
+- Partage tes idées dans les [issues](https://github.com/Black-Thor/devsecops-docu/issues).
+- Discute avec d'autres contributeurs sur le [Discord](https://discord.gg/tonlien) (lien fictif).
+
+---
+## 📜 Licence
+
+Ce projet est sous licence **MIT**. Vous êtes libre de l'utiliser, de le modifier et de le distribuer.
+
+---
+## 📧 Contact
+
+Pour toute question ou suggestion, contacte-moi à [ton.email@example.com](mailto:ton.email@example.com).
+
+---
+> *"La sécurité n'est pas un produit, mais un processus. Elle doit être intégrée dès le début."* — [DevSecOps.org](https://www.devsecops.org)

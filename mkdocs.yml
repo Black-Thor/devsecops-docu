@@ -13,7 +13,8 @@ theme:
 nav:
   - Accueil: index.md
   - DevOps & DevSecOps:
-    - Introduction: devops/devsecops.md
+    - Introduction:
+        - devops/culture/introduction.md
     - Culture DevOps:
       - Présentation: devops/culture/introduction.md
       - Piliers: devops/culture/piliers.md
@@ -51,8 +52,8 @@ plugins:
   - blog:
       blog_dir: blog
       blog_toc: true
-  - glightbox  # Pour agrandir les images
-  - git-revision-date-localized  # Pour afficher la date de dernière mise à jour
+  - glightbox
+  # - git-revision-date-localized
 
 markdown_extensions:
   - pymdownx.highlight
